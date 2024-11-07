@@ -1,0 +1,19 @@
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Django CRM</a>
+        <ul class="navbar-nav d-flex flex-row ms-3">
+            {% if user.is_authenticated %}
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="{% url 'home' %}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
